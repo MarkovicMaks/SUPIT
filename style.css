@@ -24,6 +24,20 @@
   
 }
 
-.Animation2{
+#TypewriterAnimation{
   color: red;
+}
+
+#CursorAnimation{
+  color: red;
+  animation: blink182 0.7s linear infinite;
+}
+
+@keyframes blink182{
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
 }
