@@ -8,11 +8,22 @@
 .BackgroundVideo{
     width: 100%;
     height: 100vh;
-    /* left: 0; */
     position: fixed;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+}
+
+.AnimationOverlay{
+  z-index: 1; 
+  position: absolute;
+  color: antiquewhite;
+  
+}
+
+.Animation2{
+  color: red;
 }
