@@ -53,3 +53,17 @@
   align-items: center;
 
 }
+
+.dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 3s ease-out;
+  border: 0px;
+  border-radius: 0;
+}
+
+/*Novosti*/
+
+.newsButon{
+  border-radius: 50%;
+}
