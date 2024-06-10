@@ -1,42 +1,40 @@
 /* navbar */
-*{
-
+* {
 }
-.nav-link  {
-    font-size: 17px !important; /* Adjust the size as needed */
-  }
+.nav-link {
+  font-size: 17px !important; /* Adjust the size as needed */
+}
 
 /* Homepage */
 
-.BackgroundVideo{
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
+.BackgroundVideo {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 
-.AnimationOverlay{
-  z-index: 1; 
+.AnimationOverlay {
+  z-index: 1;
   position: absolute;
   color: antiquewhite;
-  
 }
 
-#TypewriterAnimation{
+#TypewriterAnimation {
   color: red;
 }
 
-#CursorAnimation{
+#CursorAnimation {
   color: red;
   animation: blink182 0.7s linear infinite;
 }
 
-@keyframes blink182{
+@keyframes blink182 {
   0% {
     opacity: 100%;
   }
@@ -47,11 +45,10 @@
 
 /* O Nama */
 
-.ONamaMap{
+.ONamaMap {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .dropdown-menu {
@@ -64,6 +61,17 @@
 
 /*Novosti*/
 
-.newsButon{
+.newsButon {
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 15px solid oldlace;
+  animation: showPhotos 1s;
+}
+
+.newsButonGroup {
+  display: flex;
+  justify-content: space-around;
   border-radius: 50%;
 }
