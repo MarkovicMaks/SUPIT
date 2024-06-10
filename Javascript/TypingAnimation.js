@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const writeLoop = async () => {
         while (true) {
             let currentWord = rijeci[currentPhraseIndex];
-            console.log(currentWord);
 
             for (let i = 0; i < currentWord.length; i++) {
                 ElementId.innerText = currentWord.substring(0, i + 1);
