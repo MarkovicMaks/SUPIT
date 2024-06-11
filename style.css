@@ -1,6 +1,5 @@
 /* navbar */
-* {
-}
+
 .nav-link {
   font-size: 17px !important; /* Adjust the size as needed */
 }
@@ -51,12 +50,22 @@
   align-items: center;
 }
 
-.dropdown-menu {
+.navbarDropdownAnimation {
   max-height: 0;
   overflow: hidden;
   transition: max-height 3s ease-out;
   border: 0px;
   border-radius: 0;
+}
+
+.akreditacijeCards {
+  width: 80vw;
+}
+
+.akreditacijeCardsGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*Novosti*/
