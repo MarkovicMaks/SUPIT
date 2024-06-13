@@ -1,7 +1,24 @@
 /* navbar */
 
 .nav-link {
-  font-size: 17px !important; /* Adjust the size as needed */
+  font-size: 17px !important;
+  color: rgb(169, 169, 169);
+}
+
+/* footer */
+
+.foterWaves {
+  aspect-ratio: 960/300;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/svg/layered-waves-haikei.svg");
+  position: relative;
+  top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Homepage */
@@ -15,7 +32,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
 }
 
 .AnimationOverlay {
@@ -78,6 +94,49 @@
 
 .fancyText {
   width: 50vw;
+}
+
+.oNamaHeader {
+  margin-top: 20px;
+  margin-left: 10vw;
+  margin-bottom: 0;
+}
+
+.orange-line {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: none;
+  height: 10px;
+  background: rgb(219, 114, 24);
+  background: linear-gradient(
+    43deg,
+    rgba(219, 114, 24, 1) 27%,
+    rgba(196, 16, 96, 1) 100%
+  );
+  width: 30%;
+  margin-left: 10%;
+  border-bottom-right-radius: 50%;
+  opacity: 100;
+}
+
+#flex-item-photo-one {
+  width: 130px;
+  padding-top: 10px;
+}
+
+#flex-item-photo-two {
+  width: 100px;
+  padding-top: 10px;
+}
+
+#flex-item-photo-four {
+  width: 280px;
+  padding-top: 10px;
+}
+
+#flex-item-photo-six {
+  width: 180px;
+  padding-top: 10px;
 }
 /*Novosti*/
 
