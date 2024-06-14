@@ -41,11 +41,11 @@
 }
 
 #TypewriterAnimation {
-  color: red;
+  color: darkred;
 }
 
 #CursorAnimation {
-  color: red;
+  color: darkred;
   animation: blink182 0.7s linear infinite;
 }
 
@@ -141,8 +141,8 @@
 /*Novosti*/
 
 .newsButon {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   overflow: hidden;
   border-radius: 50%;
   border: 15px solid oldlace;
@@ -152,5 +152,35 @@
 .newsButonGroup {
   display: flex;
   justify-content: space-around;
-  border-radius: 50%;
+  align-items: center;
+  height: 50vh;
+  margin: 0 70px;
+}
+
+.newsPreviewBaner{
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+}
+
+@keyframes slideInleft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+
+/* Signup */
+
+.signUpBackground {
+  aspect-ratio: 900/600;
+  width: 100%;
+  height: 91.5%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/svg/low-poly-grid-haikei.svg");
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

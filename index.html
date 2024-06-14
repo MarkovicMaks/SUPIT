@@ -67,23 +67,27 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 data-bs-auto-close="outside"
-                style="color: gray;"
+                style="color: gray"
               >
                 Login
-            </button>
+              </button>
               <form
                 class="dropdown-menu p-4 dropdown-menu-end"
                 style="min-width: 300px"
+                id="FormLogin"
+                action="https://www.fulek.com/data/api/user/login"
+                method="post"
               >
                 <div class="mb-3">
                   <label for="Username" class="form-label"
-                    >Username</label
+                    >Korisničko Ime</label
                   >
                   <input
                     type="text"
                     class="form-control"
-                    id="Username"
-                    placeholder="Nikola"
+                    id="username"
+                    type="email"
+                    required
                   />
                 </div>
                 <div class="mb-3">
@@ -91,27 +95,24 @@
                     >Password</label
                   >
                   <input
+                    input
                     type="password"
                     class="form-control"
-                    id="exampleDropdownFormPassword2"
-                    placeholder="Password"
+                    id="password"
+                    placeholder="password"
+                    required
                   />
                 </div>
-                <div class="mb-3">
-                  <div class="form-check">
-                    <input
-                      type="checkbox"
-                      class="form-check-input"
-                      id="dropdownCheck2"
-                    />
-                    <label class="form-check-label" for="dropdownCheck2">
-                      Remember me
-                    </label>
-                  </div>
+                <button type="submit" class="btn btn-primary" id="loginBtn">
+                  Prijavi se
+                </button>
+                <div class="errorMessage" id="MsgError">
+                  <p id="errorMsg">User not found.</p>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/SignUP.html">Nemate račun, napravite ga? Sign up</a>
+                <a class="dropdown-item" href="/SignUP.html"
+                  >Nemate račun, napravite ga? Sign up</a
+                >
               </form>
             </div>
           </div>
@@ -238,5 +239,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="/Javascript/Login.js"></script>
   </body>
 </html>
