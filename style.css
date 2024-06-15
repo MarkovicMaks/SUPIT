@@ -1,3 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+:root {
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  --algebra-Orange: #db7218;
+  --algebra-Purple: #c41060;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
 /* navbar */
 
 .nav-link {
@@ -110,8 +125,8 @@
   background: rgb(219, 114, 24);
   background: linear-gradient(
     43deg,
-    rgba(219, 114, 24, 1) 27%,
-    rgba(196, 16, 96, 1) 100%
+    --algebra-Orange 27%,
+    --algebra-Purple 100%
   );
   width: 30%;
   margin-left: 10%;
@@ -157,30 +172,132 @@
   margin: 0 70px;
 }
 
-.newsPreviewBaner{
+.newsPreviewBaner {
   width: 100%;
   height: 40vh;
   overflow: hidden;
 }
 
 @keyframes slideInleft {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
-
 
 /* Signup */
 
 .signUpBackground {
   aspect-ratio: 900/600;
-  width: 100%;
-  height: 91.5%;
+  width: 100vw;
+  height: calc(100vh - 60px);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-image: url("/svg/low-poly-grid-haikei.svg");
-  position: absolute;
+  top: 60px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  color: var(--white-color);
+}
+
+.signUp {
+  position: relative;
+  height: 100vh;
+  display: grid;
   align-items: center;
+}
+
+.signUpForm {
+  position: relative;
+  background-color: hsla(0, 0%, 10%, 0.1);
+  border: 2px solid var(--white-color);
+  margin-inline: 1.5rem;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+  width: 20vw;
+  
+}
+
+.signUpcontent,
+.signUpbox {
+  display: grid;
+}
+.signUpcontent {
+  row-gap: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.signUpbox {
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  column-gap: 0.75rem;
+  border-bottom: 2px solid var(--white-color);
+}
+.signUpicon,
+.signUpeye {
+  font-size: 1.25rem;
+}
+.signUpinput {
+  width: 100%;
+  padding-block: 0.8rem;
+  background: none;
+  color: var(--white-color);
+  position: relative;
+  z-index: 1;
+}
+.signUpbox-input {
+  position: relative;
+}
+.signUplabel {
+  position: absolute;
+  left: 0;
+  top: 13px;
+  font-weight: var(--font-medium);
+  transition: top 0.3s, font-size 0.3s;
+}
+.signUpbox:nth-child(2) input {
+  padding-right: 1.8rem;
+}
+.signUpcheck,
+.signUpcheck-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.signUpcheck-label,
+.signUpforgot,
+.signUpregister {
+  font-size: var(--small-font-size);
+}
+.signUpcheck-group {
+  column-gap: 0.5rem;
+}
+.signUpcheck-input {
+  width: 16px;
+  height: 16px;
+}
+.signUpforgot {
+  color: var(--white-color);
+}
+.signUpforgot:hover {
+  text-decoration: underline;
+}
+.signUpbutton {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--white-color);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.signUpinput:focus + .signUplabel {
+  top: -12px;
+  font-size: var(--small-font-size);
 }
