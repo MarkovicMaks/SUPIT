@@ -3,7 +3,7 @@ function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const rijeci = ['Uspi', 'Briliraj', 'Zasiskri'];
+const rijeci = ['Uspi', 'Briliraj', 'Zaiskri'];
 
 document.addEventListener('DOMContentLoaded', () => {
     const ElementId = document.getElementById("TypewriterAnimation");

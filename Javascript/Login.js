@@ -3,19 +3,16 @@
   const username = document.querySelector("#username");
   const password = document.querySelector("#password");
   const errorMsg = document.querySelector("#errorMsg");
-  const loggingout = document.querySelector("#Logout");
-  const usernameDisplay = document.querySelector("#usernameDisplay");
+  const logoutLink = document.querySelector("#logoutLink");
 
-  document.addEventListener("DOMContentLoaded", (event) => {
-    updateNavbarWithUsername();
-  });
+  document.addEventListener("DOMContentLoaded", (event) => {});
 
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
     login();
   });
 
-  loggingout.addEventListener("click", logoutFunction);
+  logoutLink.addEventListener("click", logoutFunction);
 
   function login() {
     const loginData = {
@@ -40,7 +37,12 @@
             "Stored username in session storage:",
             loginData.username
           );
-          updateNavbarWithUsername();
+          document.getElementById("usernameDropdown").style.display = "block";
+          
+
+          document.getElementById("loginButton").style.display = "none";
+          dropdownMenuButton.innerText = sessionStorage.getItem("username");
+          
         } else {
           errorMsg.style.display = "block";
         }
@@ -52,25 +54,17 @@
     function storeTokenToSessionStorage(token) {
       sessionStorage.setItem("token", token);
     }
-
   }
 
-  document.getElementById('logoutBtn').addEventListener('click', () => {
+  document.getElementById("logoutBtn").addEventListener("click", () => {
     sessionStorage.clear();
     window.location.href = "index.html";
   });
 
-  function updateNavbarWithUsername() {
-    const storedUsername = sessionStorage.getItem("username");
-    console.log(sessionStorage.getItem("username"));
-    if (storedUsername) {
-      document.getElementById("loginButton").textContent = storedUsername;
-      usernameDisplay.style.display = "inline";
-      console.log(2);
-    } else {
-      document.getElementById("loginButton").textContent = "Login";
-      usernameDisplay.style.display = "none";
-      console.log(3);
-    }
+  function logoutFunction() {
+    sessionStorage.clear();
+    document.getElementById("usernameDropdown").style.display = "none";
+    document.getElementById("loginButton").style.display = "inline-block";
+    window.location.href = "index.html";
   }
 })();

@@ -70,7 +70,7 @@
                 style="color: gray"
                 id="loginButton"
               >
-                Login <span id="usernameDisplay" style="display: none"></span>
+                Login
               </button>
 
               <form
@@ -116,6 +116,24 @@
                   >Nemate račun, napravite ga? Sign up</a
                 >
               </form>
+            </div>
+            <div class="dropdown" id="usernameDropdown" style="display: none">
+              <button
+                type="nav-link"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                data-bs-auto-close="outside"
+                style="color: gray"
+                id="dropdownMenuButton"
+              >
+                Username
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li>
+                  <a class="dropdown-item" id="logoutLink" href="#">logout</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
