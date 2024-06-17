@@ -380,3 +380,202 @@ button {
   top: -12px;
   font-size: var(--small-font-size);
 }
+
+/* Nastavni plan */
+
+.sectionTwo-NastavniPlan {
+  position: relative;
+  top: 56px;
+  height: 464px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.sectionTwo-NastavniPlan-left, .sectionTwo-NastavniPlan-right {
+  height: 300px;
+  width: auto;
+}
+
+.sectionTwo-NastavniPlan-right {
+  max-width: 600px;
+  width: auto;
+}
+
+#label-kolegij-header {
+  color: black;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px white;
+  padding-bottom: 10px;
+}
+
+#nastavni-plan {
+  height: 35px;
+  width: 600px;
+  padding-left: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 0px 0px 1.5px #0377fc;
+}
+
+#nastavni-plan:focus {
+  background-color: lightblue;
+}
+
+.displayKolegij {
+  height: 200px;
+  width: 600px;
+}
+
+#KolegijList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#kolegijItem {
+  height: 35px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: black;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px white;
+}
+
+#kolegijItem:hover {
+  background-color: #0377fc;
+  cursor: pointer;
+}
+
+.KolegijInput {
+  display: flex;
+  flex-direction: column;
+}
+
+#displayContainer {
+  max-height: 380px;
+  height: auto;
+  width: 594px;
+  overflow: auto;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-top: none;
+  margin-left: 3px;
+  border-radius: 5px;
+  border-color: #ddd;
+}
+
+#displayContainer::-webkit-scrollbar {
+  display: none;
+}
+
+#outputTable {
+  display: none;
+  border-collapse: collapse; 
+  width: 800px;
+} 
+
+#outputTable th, 
+#outputTable td { 
+  border-top: 1px solid #ddd;
+  padding-top: 4px;
+  padding-bottom: 4px; 
+  padding-left: 10px;
+  text-align: center;
+  max-width: 345px;
+  text-wrap: nowrap;
+} 
+
+#outputTable tr:last-child {
+  border-bottom: 4px solid black;
+}
+
+#outputTable td:first-child {
+  text-align: left;
+  padding-right: 20px;
+  text-wrap: wrap;
+  width: 345px;
+}
+
+#outputTable td:last-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  gap: 10px;
+  padding-right: 5px;
+}
+
+#outputTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#outputTable #tipData {
+  width: 200px;
+}
+
+#outputTable th { 
+  text-align: left;
+  color: black;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px white;
+}
+
+#deleteBtn {
+  background-color: #e30d0d;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  width: 80px;
+  height: 35px;
+  border-radius: 5px;
+  border: 0;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+#deleteBtn:hover {
+  transition: 0.5s;
+  opacity: 1;
+}
+
+#SumTable {
+  border-collapse: collapse; 
+  width: 800px;
+} 
+
+#SumTable td { 
+  padding-top: 4px;
+  padding-bottom: 4px; 
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  color: black;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px white;
+  width: 70px;
+}
+
+#SumTable td:first-child {
+  width: 345px;
+  text-align: right;
+}
+
+#SumTable td:nth-child(2) {
+  width: 46px;
+}
+
+#SumTable td:nth-child(3) {
+  width: 40px;
+}
+
+#SumTable td:nth-child(4) {
+  width: 93px;
+}
+
+#SumTable td:last-child {
+  width: 60px;
+}

@@ -48,7 +48,7 @@
             <li class="nav-item">
               <a class="nav-link" href="Novosti.html">Novosti</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="NastavniPlan" style="display: none">
               <a class="nav-link" href="NastavniPlan.html">Nastavni plan</a>
             </li>
             <li
@@ -68,20 +68,28 @@
                 aria-expanded="false"
                 data-bs-auto-close="outside"
                 style="color: gray"
+                id="loginButton"
               >
                 Login
               </button>
+
               <form
                 class="dropdown-menu p-4 dropdown-menu-end"
                 style="min-width: 300px"
+                id="FormLogin"
+                action="https://www.fulek.com/data/api/user/login"
+                method="post"
               >
                 <div class="mb-3">
-                  <label for="Username" class="form-label">Username</label>
+                  <label for="Username" class="form-label"
+                    >Korisničko Ime</label
+                  >
                   <input
                     type="text"
                     class="form-control"
-                    id="Username"
-                    placeholder="Nikola"
+                    id="username"
+                    type="email"
+                    required
                   />
                 </div>
                 <div class="mb-3">
@@ -89,41 +97,185 @@
                     >Password</label
                   >
                   <input
+                    input
                     type="password"
                     class="form-control"
-                    id="exampleDropdownFormPassword2"
-                    placeholder="Password"
+                    id="password"
+                    placeholder="password"
+                    required
                   />
                 </div>
-                <div class="mb-3">
-                  <div class="form-check">
-                    <input
-                      type="checkbox"
-                      class="form-check-input"
-                      id="dropdownCheck2"
-                    />
-                    <label class="form-check-label" for="dropdownCheck2">
-                      Remember me
-                    </label>
-                  </div>
+                <button type="submit" class="btn btn-primary" id="loginBtn">
+                  Prijavi se
+                </button>
+                <div class="errorMessage" id="MsgError" style="display: none">
+                  <p id="errorMsg">User not found.</p>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/SignUP.html"
                   >Nemate račun, napravite ga? Sign up</a
                 >
               </form>
             </div>
+            <div class="dropdown" id="usernameDropdown" style="display: none">
+              <button
+                type="nav-link"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                data-bs-auto-close="outside"
+                style="color: gray"
+                id="dropdownMenuButton"
+              >
+                Username
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li>
+                  <a class="dropdown-item" id="logoutLink" href="#">logout</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </nav>
-    <main></main>
+    <main>
 
+      <div class="sectionTwo-NastavniPlan">
+        <div class="sectionTwo-NastavniPlan-left">
+            <div class="KolegijInput">
+                <label for="inputKolegij" id="label-kolegij-header">Naziv kolegija:</label>
+                <input type="text" name="inputKolegij" id="nastavni-plan" placeholder="Započnite unos naziva kolegija...">
+                <div class="displayKolegij"></div>
+            </div>
+        </div>
+        <div class="sectionTwo-NastavniPlan-right">
+            <table id="outputTable">
+                <tr>
+                    <th id="kolegijData">Kolegij</th>
+                    <th id="EctsData">ECTS</th>
+                    <th>Sati</th>
+                    <th>Predavanja</th>
+                    <th>Vježbe</th>
+                    <th id="tipData">Tip</th>
+            </table>
+            <table id="SumTable">
+                
+            </table>
+        </div>
+    </div>
+
+    </main>
+    <footer>
+      <div class="foterWaves"></div>
+    </footer>
+
+    <div
+      class="modal fade"
+      id="kontaktiModal"
+      tabindex="-1"
+      aria-labelledby="kontaktiModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form
+            action="https://www.fulek.com/mvc/supit/project-contact-form"
+            method="POST"
+          >
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Javi nam se
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="form-floating mb-3">
+                <input
+                  type="fullname"
+                  class="form-control"
+                  id="fullname"
+                  placeholder="name@example.com"
+                  name="FullName"
+                  required
+                />
+                <label for="fullname">Puno ime</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="Email"
+                  placeholder="name@example.com"
+                  required
+                />
+                <label for="email">Email addresa</label>
+              </div>
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                style="margin-bottom: 15px; margin-top: 15px"
+                id="importance"
+                name="Importance"
+              >
+                <option value="" selected>Prioritet</option>
+                <option value="low">Niski</option>
+                <option value="medium">Srednji</option>
+                <option value="high">Visoki</option>
+              </select>
+
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="Poruka"
+                  id="message"
+                  name="Message"
+                  required
+                ></textarea>
+                <label for="message">Poruka</label>
+              </div>
+              <div class="mb-3 form-check" style="margin-top: 15px">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="receiveNewsletter"
+                  name="ReceiveNewsLetter"
+                  value="true"
+                />
+                <label class="form-check-label" for="receiveNewsletter"
+                  >Želim primati obavjesti</label
+                >
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Odustani
+              </button>
+              <button type="submit" id="submitBtn" class="btn btn-primary">
+                Pošalji
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="/Javascript/NastavniPlan.js"></script>
+    <script src="/Javascript/Login.js"></script>
   </body>
 </html>
