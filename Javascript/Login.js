@@ -5,6 +5,7 @@
   const errorMsg = document.querySelector("#errorMsg");
   const logoutLink = document.querySelector("#logoutLink");
 
+
   document.addEventListener("DOMContentLoaded", (event) => {});
 
   loginForm.addEventListener("submit", (e) => {
