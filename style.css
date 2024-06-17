@@ -5,7 +5,11 @@
   --black-color: hsl(0, 0%, 0%);
   --algebra-Orange: #db7218;
   --algebra-Purple: #c41060;
-  --algebra-Gradient: linear-gradient(43deg, rgba(219,114,24,1) 27%, rgba(196,16,96,1) 100%);
+  --algebra-Gradient: linear-gradient(
+    43deg,
+    rgba(219, 114, 24, 1) 27%,
+    rgba(196, 16, 96, 1) 100%
+  );
   --off-white: #f8f9fa;
 }
 
@@ -21,7 +25,6 @@ button {
   font-size: 17px !important;
   color: rgb(169, 169, 169);
 }
-
 
 /* footer */
 
@@ -108,6 +111,7 @@ button {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  font-size: larger;
 }
 
 .fancyText {
@@ -125,12 +129,7 @@ button {
   margin-bottom: 20px;
   border: none;
   height: 10px;
-  background: rgb(219, 114, 24);
-  background: linear-gradient(
-    43deg,
-    --algebra-Orange 27%,
-    --algebra-Purple 100%
-  );
+  background-image: var(--algebra-Gradient);
   width: 30%;
   margin-left: 10%;
   border-bottom-right-radius: 50%;
@@ -157,25 +156,33 @@ button {
   padding-top: 10px;
 }
 
-.Location{
+.Location {
   display: flex;
   justify-content: center;
   width: 100%;
   margin: 20px 0px;
 }
-.LocationText{
+.LocationText {
   padding-left: 20px;
 }
 
 /*Novosti*/
 
 .newsButon {
-  height: 250px;
-  width: 250px;
-  overflow: hidden;
   border-radius: 50%;
   border: 15px solid oldlace;
-  animation: showPhotos 1s;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+}
+
+.newsImages {
+  width: auto;
+  height: 100%;
+  margin-left: -360px;
+  z-index: 10;
 }
 
 .newsButonGroup {
@@ -184,12 +191,22 @@ button {
   align-items: center;
   height: 50vh;
   margin: 0 70px;
+  
+}
+
+.NewsButonTitle{
+  position: absolute;
+  color: white;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
 }
 
 .newsPreviewBaner {
   width: 100%;
   height: 40vh;
   overflow: hidden;
+  position: relative;
 }
 
 @keyframes slideInleft {
@@ -202,23 +219,23 @@ button {
 }
 
 /* Novosti123 */
-.FancyBoxSlikaGroup{
+.FancyBoxSlikaGroup {
   display: flex;
   justify-content: center;
 }
-.FancyBoxSlika{
+.FancyBoxSlika {
   width: 400px;
   overflow: hidden;
   border-radius: 15px;
   margin: 0 10px;
 }
 
-.VideoGroup{
+.VideoGroup {
   display: flex;
   justify-content: center;
 }
 
-.NewsOneVieo{
+.NewsOneVieo {
   width: 40vw;
   background: var(--algebra-Gradient);
   border-radius: 20px;
@@ -226,14 +243,36 @@ button {
   margin: 20px;
 }
 
-.NewsTextGroup{
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+.NewsTitle {
+  font-size: 3vw;
+  font-weight: bold;
+  color: var(--white-color);
+  background-image: var(--algebra-Gradient);
+  position: absolute;
+  top: 20vh;
+  left: 10vw;
+  padding: 10px;
+  border-radius: 15px;
 }
 
-.NewsText{
-  width: 50vw;
+.NewsTextGroup {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+}
+
+.NewsText {
+  width: 70vw;
+  font-size: larger;
+}
+
+.Banerline {
+  margin: 0;
+  border: none;
+  height: 10px;
+  background-image: var(--algebra-Gradient);
+  width: 70%;
+  border-bottom-right-radius: 100%;
 }
 
 /* Signup */
@@ -310,7 +349,6 @@ button {
 .signUpbox:nth-child(2) input {
   padding-right: 1.8rem;
 }
-
 
 .signUpcheck-label,
 .signUpforgot,

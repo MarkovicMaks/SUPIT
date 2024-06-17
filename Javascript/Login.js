@@ -38,8 +38,8 @@
             loginData.username
           );
           document.getElementById("usernameDropdown").style.display = "block";
+          document.getElementById("NastavniPlan").style.display = "block";
           
-
           document.getElementById("loginButton").style.display = "none";
           dropdownMenuButton.innerText = sessionStorage.getItem("username");
           
@@ -64,6 +64,7 @@
   function logoutFunction() {
     sessionStorage.clear();
     document.getElementById("usernameDropdown").style.display = "none";
+    document.getElementById("NastavniPlan").style.display = "none";
     document.getElementById("loginButton").style.display = "inline-block";
     window.location.href = "index.html";
   }
