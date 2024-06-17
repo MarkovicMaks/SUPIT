@@ -3,57 +3,74 @@
   const username = document.querySelector("#username");
   const password = document.querySelector("#password");
   const errorMsg = document.querySelector("#errorMsg");
-  const loginSuccessMsg = document.querySelector("#loginSuccessMsg");
-  let loggingout = document.querySelector("#Logout");
+  const loggingout = document.querySelector("#Logout");
+  const usernameDisplay = document.querySelector("#usernameDisplay");
+
+  document.addEventListener("DOMContentLoaded", (event) => {
+    updateNavbarWithUsername();
+  });
 
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
     login();
   });
 
+  loggingout.addEventListener("click", logoutFunction);
+
   function login() {
     const loginData = {
-      username: this.username.value,
-      password: this.password.value,
+      username: username.value,
+      password: password.value,
     };
 
-    console.log(loginData);
+    console.log("lginaj s:", loginData);
 
-    const response = fetch("https://www.fulek.com/data/api/user/login", {
+    fetch("https://www.fulek.com/data/api/user/login", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(loginData),
-    });
-    console.log(response);
-    response
-      .then((result) => result.json())
+    })
+      .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        if (data.statusCode === 404) {
+        console.log("Login response:", data);
+        if (data.statusCode === 200 && data.isSuccess) {
+          storeTokenToSessionStorage(data.data.token);
+          sessionStorage.setItem("username", loginData.username);
+          console.log(
+            "Stored username in session storage:",
+            loginData.username
+          );
+          updateNavbarWithUsername();
+        } else {
           errorMsg.style.display = "block";
         }
-        storeTokenToSessionStorage(data.data.token);
-        errorMsg.style.display = "none";
-        loginSuccessMsg.style.display = "block";
-        setTimeout(redirect, 3000);
-        sessionStorage.setItem("username", loginData.username);
-      });
+      })
+      .catch((error) => console.error("Fetch error:", error));
+
+    console.log(response);
 
     function storeTokenToSessionStorage(token) {
       sessionStorage.setItem("token", token);
     }
 
-    function redirect() {
-      location.replace("index.html");
-    }
   }
 
-  loggingout.addEventListener("click", logoutFunction);
-
-  function logoutFunction() {
+  document.getElementById('logoutBtn').addEventListener('click', () => {
     sessionStorage.clear();
-    location.replace("index.html");
+    window.location.href = "index.html";
+  });
+
+  function updateNavbarWithUsername() {
+    const storedUsername = sessionStorage.getItem("username");
+    console.log(sessionStorage.getItem("username"));
+    if (storedUsername) {
+      document.getElementById("loginButton").textContent = storedUsername;
+      usernameDisplay.style.display = "inline";
+      console.log(2);
+    } else {
+      document.getElementById("loginButton").textContent = "Login";
+      usernameDisplay.style.display = "none";
+      console.log(3);
+    }
   }
 })();

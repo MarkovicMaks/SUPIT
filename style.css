@@ -5,6 +5,8 @@
   --black-color: hsl(0, 0%, 0%);
   --algebra-Orange: #db7218;
   --algebra-Purple: #c41060;
+  --algebra-Gradient: linear-gradient(43deg, rgba(219,114,24,1) 27%, rgba(196,16,96,1) 100%);
+  --off-white: #f8f9fa;
 }
 
 input,
@@ -19,6 +21,7 @@ button {
   font-size: 17px !important;
   color: rgb(169, 169, 169);
 }
+
 
 /* footer */
 
@@ -153,6 +156,17 @@ button {
   width: 180px;
   padding-top: 10px;
 }
+
+.Location{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0px;
+}
+.LocationText{
+  padding-left: 20px;
+}
+
 /*Novosti*/
 
 .newsButon {
@@ -185,6 +199,41 @@ button {
   to {
     transform: translateX(0);
   }
+}
+
+/* Novosti123 */
+.FancyBoxSlikaGroup{
+  display: flex;
+  justify-content: center;
+}
+.FancyBoxSlika{
+  width: 400px;
+  overflow: hidden;
+  border-radius: 15px;
+  margin: 0 10px;
+}
+
+.VideoGroup{
+  display: flex;
+  justify-content: center;
+}
+
+.NewsOneVieo{
+  width: 40vw;
+  background: var(--algebra-Gradient);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.NewsTextGroup{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.NewsText{
+  width: 50vw;
 }
 
 /* Signup */
@@ -220,7 +269,6 @@ button {
   border-radius: 1rem;
   backdrop-filter: blur(8px);
   width: 20vw;
-  
 }
 
 .signUpcontent,
@@ -262,21 +310,14 @@ button {
 .signUpbox:nth-child(2) input {
   padding-right: 1.8rem;
 }
-.signUpcheck,
-.signUpcheck-group {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 
 .signUpcheck-label,
 .signUpforgot,
 .signUpregister {
   font-size: var(--small-font-size);
 }
-.signUpcheck-group {
-  column-gap: 0.5rem;
-}
+
 .signUpcheck-input {
   width: 16px;
   height: 16px;
