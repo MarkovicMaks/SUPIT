@@ -4,9 +4,14 @@
   const password = document.querySelector("#password");
   const errorMsg = document.querySelector("#errorMsg");
   const logoutLink = document.querySelector("#logoutLink");
-
-
-  document.addEventListener("DOMContentLoaded", (event) => {});
+  
+  if(sessionStorage.getItem("token") != null) {
+    document.getElementById("usernameDropdown").style.display = "block";
+    document.getElementById("NastavniPlan").style.display = "block";
+    
+    document.getElementById("loginButton").style.display = "none";
+    dropdownMenuButton.innerText = sessionStorage.getItem("username");
+  }
 
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();

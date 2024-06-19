@@ -84,6 +84,7 @@ button {
 .ONamaMap {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .navbarDropdownAnimation {
@@ -157,11 +158,9 @@ button {
 }
 
 .Location {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 20px 0px;
+  width: 70%;
 }
+
 .LocationText {
   padding-left: 20px;
 }
@@ -176,6 +175,7 @@ button {
   overflow: hidden;
   border-radius: 50%;
   position: relative;
+  display: flex;
 }
 
 .newsImages {
@@ -198,8 +198,7 @@ button {
   position: absolute;
   color: white;
   width: 50%;
-  text-align: center;
-  justify-content: center;
+  text-shadow: 2px 2px 8px var(--black-color);
 }
 
 .newsPreviewBaner {
@@ -383,45 +382,40 @@ button {
 
 /* Nastavni plan */
 
-.sectionTwo-NastavniPlan {
-  position: relative;
-  top: 56px;
-  height: 464px;
+.sectionOne-NastavniPlan {
+  display: flex;
+  margin-top: 10vh;
   width: 100vw;
   display: flex;
-  justify-content: center;
-  align-items: start;
+  align-items: center;
   gap: 50px;
   flex-wrap: wrap;
 }
 
-.sectionTwo-NastavniPlan-left, .sectionTwo-NastavniPlan-right {
+.sectionTwo-NastavniPlan{
   height: 300px;
-  width: auto;
+  width: 30VW;
+  padding: 0px 30px;
 }
 
-.sectionTwo-NastavniPlan-right {
-  max-width: 600px;
-  width: auto;
-}
 
 #label-kolegij-header {
-  color: black;
+  color: var(--black-color);
   font-weight: 700;
-  text-shadow: 1px 1px 2px white;
   padding-bottom: 10px;
+  font-size: large;
 }
 
 #nastavni-plan {
   height: 35px;
-  width: 600px;
+  width: 25vw;
   padding-left: 5px;
-  border-radius: 5px;
-  box-shadow: 1px 0px 0px 1.5px #0377fc;
+  border-radius: 10px;
+  border: var(--algebra-Orange) 5px solid;
 }
 
 #nastavni-plan:focus {
-  background-color: lightblue;
+  background-color: var(--off-white);
 }
 
 .displayKolegij {
@@ -433,21 +427,21 @@ button {
   list-style: none;
   margin: 0;
   padding: 0;
+  height: 45vh;
 }
 
 #kolegijItem {
-  height: 35px;
-  width: 600px;
+  padding: 5px;
+  width: 25vw;
   display: flex;
   align-items: center;
   padding-left: 10px;
-  color: black;
   font-weight: 700;
-  text-shadow: 1px 1px 2px white;
+  border-radius: 10px;
 }
 
 #kolegijItem:hover {
-  background-color: #0377fc;
+  background-image: var(--algebra-Gradient);
   cursor: pointer;
 }
 
@@ -461,7 +455,7 @@ button {
   height: auto;
   width: 594px;
   overflow: auto;
-  border: 1px solid rgba(0, 0, 0, .5);
+  border: 1px solid --black-color;
   border-top: none;
   margin-left: 3px;
   border-radius: 5px;
@@ -490,7 +484,7 @@ button {
 } 
 
 #outputTable tr:last-child {
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid var(--algebra-Orange);
 }
 
 #outputTable td:first-child {
@@ -504,14 +498,8 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: auto;
-  margin-left: auto;
   gap: 10px;
   padding-right: 5px;
-}
-
-#outputTable tr:nth-child(even) {
-  background-color: #f2f2f2;
 }
 
 #outputTable #tipData {
@@ -520,15 +508,13 @@ button {
 
 #outputTable th { 
   text-align: left;
-  color: black;
   font-weight: 700;
   text-shadow: 1px 1px 2px white;
 }
 
 #deleteBtn {
-  background-color: #e30d0d;
-  color: white;
-  text-shadow: 1px 1px 2px black;
+  background-color: var(--algebra-Purple);
+  color: var(--white-color);
   width: 80px;
   height: 35px;
   border-radius: 5px;
@@ -553,7 +539,6 @@ button {
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
-  color: black;
   font-weight: 700;
   text-shadow: 1px 1px 2px white;
   width: 70px;
@@ -561,7 +546,7 @@ button {
 
 #SumTable td:first-child {
   width: 345px;
-  text-align: right;
+  text-align: left;
 }
 
 #SumTable td:nth-child(2) {

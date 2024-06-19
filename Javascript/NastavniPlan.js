@@ -74,10 +74,10 @@ function selectInput(list) {
     getKolegij(SelectedKolegij.id)
 }
 
-var sumEcts = 0;
-var sumSati = 0;
-var sumPredavanja = 0;
-var sumVjezbe = 0;
+let sumEcts = 0;
+let sumSati = 0;
+let sumPredavanja = 0;
+let sumVjezbe = 0;
 
 function getKolegij(kolegij) {
     fetch(

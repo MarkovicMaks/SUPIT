@@ -147,6 +147,7 @@
       <div class="newsButonGroup">
         <a href="/Novost1.html">
           <button class="newsButon" id="btn1">
+            <h2 class="NewsButonTitle">WorldSkills Kazan 2019</h2>
             <img
               src="/img/novost1.jpg"
               class="newsImages"
@@ -157,7 +158,7 @@
 
         <a href="/Novost2.html">
           <button class="newsButon" id="btn2">
-            <h1 class="NewsButonTitle">hdkjgbis</h1>
+            <h2 class="NewsButonTitle">Ovogodišnj stipendijski natječaj</h2>
             <img
               src="/img/novost2.jpg"
               class="newsImages"
@@ -168,6 +169,7 @@
 
         <a href="/Novost3.html">
           <button class="newsButon" id="btn3">
+            <h2 class="NewsButonTitle">Algebra Juniors</h2>
             <img
               src="/img/novost3.jpg"
               class="newsImages"
@@ -181,24 +183,7 @@
       <div class="foterWaves">
       </div>
     </footer>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const buttons = document.querySelectorAll('.newsButon');
-        const bannerImage = document.getElementById('bannerImage');
-      
-        buttons.forEach(button => {
-          button.addEventListener('mouseover', function() {
-            const imgSrc = this.querySelector('img').src;
-            bannerImage.src = imgSrc;
-            bannerImage.style.animation = 'slideInleft 2s forwards';
-          });
-        });
-
-        bannerImage.addEventListener('animationend', () => {
-          bannerImage.style.animation = '';
-        });
-      });
-      </script>
+    
       <div
       class="modal fade"
       id="kontaktiModal"
@@ -299,6 +284,24 @@
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.newsButon');
+        const bannerImage = document.getElementById('bannerImage');
+      
+        buttons.forEach(button => {
+          button.addEventListener('mouseover', function() {
+            const imgSrc = this.querySelector('img').src;
+            bannerImage.src = imgSrc;
+            bannerImage.style.animation = 'slideInleft 2s forwards';
+          });
+        });
+
+        bannerImage.addEventListener('animationend', () => {
+          bannerImage.style.animation = '';
+        });
+      });
+      </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
