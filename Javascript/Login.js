@@ -8,7 +8,6 @@
   if(sessionStorage.getItem("token") != null) {
     document.getElementById("usernameDropdown").style.display = "block";
     document.getElementById("NastavniPlan").style.display = "block";
-    
     document.getElementById("loginButton").style.display = "none";
     dropdownMenuButton.innerText = sessionStorage.getItem("username");
   }

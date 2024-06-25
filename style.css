@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
+
 :root {
   --white-color: hsl(0, 0%, 100%);
   --black-color: hsl(0, 0%, 0%);
@@ -113,6 +114,9 @@ button {
   justify-content: center;
   flex-wrap: wrap;
   font-size: larger;
+  font-family: "Playwrite MX", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .fancyText {
@@ -167,6 +171,14 @@ button {
 
 /*Novosti*/
 
+.newsImages {
+  width: auto;
+  height: 100%;
+  margin-left: -360px;
+  z-index: 10;
+} 
+
+
 .newsButon {
   border-radius: 50%;
   border: 15px solid oldlace;
@@ -175,14 +187,18 @@ button {
   overflow: hidden;
   border-radius: 50%;
   position: relative;
-  display: flex;
 }
 
-.newsImages {
-  width: auto;
-  height: 100%;
-  margin-left: -360px;
-  z-index: 10;
+.newsButontTitleAlignment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .newsButonGroup {
@@ -197,9 +213,11 @@ button {
 .NewsButonTitle{
   position: absolute;
   color: white;
-  width: 50%;
+  width: 60%;
   text-shadow: 2px 2px 8px var(--black-color);
 }
+
+
 
 .newsPreviewBaner {
   width: 100%;

@@ -6,7 +6,7 @@ getNastavniPlan();
 
 let nastavniPlanList = document.getElementById("nastavni-plan");
 
-var results = [];
+let results = [];
 
 function getNastavniPlan() {
     fetch(
